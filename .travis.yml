@@ -10,13 +10,12 @@ before_install:
 - npm install -g grunt-cli
 script:
 - grunt ci
-- grunt coveralls:push
 deploy:
   provider: npm
   email: simon@simonemms.com
-  api_key:
-    secure: Tpz/DnfESujPs5FCOY9EVO7fXDQC/gxPWlOu5NJmFn4DQ721EiulEXhEX+7tgBCkrI1IBr8XbIR58ZmcXc3SOH2UEPit+S3f/J2Hxy5Xd/wXMmIdBNKPwN/Ac3KuJIzZ6283k57DRH3MInWRbZDPssT4rMqKwqViwGaDPWToVgE=
   on:
     all_branches: true
     tags: true
-    repo: slash-dev-slash-null/steeplejack-restify
+    repo: slash-dev-slash-null/steeplejack-bunyan
+  api_key:
+    secure: UFMPhH+DjFTTArSNKoY/Cr0cBj2+EpKdga8OumGuuSKtByBCe80LWMWjZSAB2FOqfrr+bd1RJMIKOe+BxFfjlop3wrRmMFKcLLxK26ETYSdnOA3Sv+PDW+4XILMGgkraZVSoUVLfDhLuCzejNZD52NMNNJ2g+Mt8euIunguHXivSrnIjGIsKo28COs0Jyi6DNyp63Fr0UZFXeytdLR+YRjDTpJmxUrD8a9+xLWVs35X27gCTAvc4LIjt03TNYhPW1LIsj6+F5s0JMtZzCaowQ1hTFZhMI51ZtT6uD+Xm3xHPPKLrodufo8PcuTeginATxhz1imqkcpXVHFzcl0uLoc2qP76K4SmWcvCewEX25l46dRBLyzxZHzNM4xBsK5rYCk21C6if06PTY77iokjuW+O5jyhC9SjBOj4HYCWQTGutRksE7Cfv6BikYBZidIv4vlMvWDApG/QH7FEe88JFRm8cvUjbn+bJIpIXHHC30xFgYpLz9jRnp9/ob2ZUTLOksg6pE4T1Sx0qrUy9yVkqgZI7vttqbsgEJ0EbkryVlFiA41doKZeQ9U29Z4fIPujQXhoGVEOhp73Kqg0IXHC2c0A9x//1MQr9HO6chNMiDDKTm5Mi+L7Gv24uNboo96yPf1AGzn09di3c25iQwKwWb++g2fEpJhKfq3F0sivOd94=
