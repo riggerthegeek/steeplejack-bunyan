@@ -1,22 +1,24 @@
 language: node_js
 node_js:
-- '0.12'
-- '0.11'
-- '0.10'
+- node
+- '4.3'
 - iojs
+- '0.12'
 matrix:
   fast_finish: true
-before_install:
-- npm install -g grunt-cli
+sudo: false
+before_script:
+- npm run typings
 script:
-- grunt ci
-- grunt coveralls:push
+- npm run ci
+before_deploy:
+- npm run build
 deploy:
   provider: npm
   email: simon@simonemms.com
   on:
     all_branches: true
     tags: true
-    repo: slash-dev-slash-null/steeplejack-bunyan
+    repo: riggerthegeek/steeplejack-bunyan
   api_key:
-    secure: UFMPhH+DjFTTArSNKoY/Cr0cBj2+EpKdga8OumGuuSKtByBCe80LWMWjZSAB2FOqfrr+bd1RJMIKOe+BxFfjlop3wrRmMFKcLLxK26ETYSdnOA3Sv+PDW+4XILMGgkraZVSoUVLfDhLuCzejNZD52NMNNJ2g+Mt8euIunguHXivSrnIjGIsKo28COs0Jyi6DNyp63Fr0UZFXeytdLR+YRjDTpJmxUrD8a9+xLWVs35X27gCTAvc4LIjt03TNYhPW1LIsj6+F5s0JMtZzCaowQ1hTFZhMI51ZtT6uD+Xm3xHPPKLrodufo8PcuTeginATxhz1imqkcpXVHFzcl0uLoc2qP76K4SmWcvCewEX25l46dRBLyzxZHzNM4xBsK5rYCk21C6if06PTY77iokjuW+O5jyhC9SjBOj4HYCWQTGutRksE7Cfv6BikYBZidIv4vlMvWDApG/QH7FEe88JFRm8cvUjbn+bJIpIXHHC30xFgYpLz9jRnp9/ob2ZUTLOksg6pE4T1Sx0qrUy9yVkqgZI7vttqbsgEJ0EbkryVlFiA41doKZeQ9U29Z4fIPujQXhoGVEOhp73Kqg0IXHC2c0A9x//1MQr9HO6chNMiDDKTm5Mi+L7Gv24uNboo96yPf1AGzn09di3c25iQwKwWb++g2fEpJhKfq3F0sivOd94=
+    secure: mNBycuVfDpAE6++cZzJKZeYkJ8EyrhkSQZsavopzIzE3yP3tzw30yh4zp9cejVaXrU0HMm8vyzFfEIZ7OfVHuhJwYBr9NzQtj7xZSD9HyDquGwGgwe58dIxcAPYlUARWhF5GS++o/Ps1+R9avwzEvYOE2z4L3QotuXIPnJusjQOdIQJhjlffc7oH6DPVh6AQ5vY2VdvILISkl7fCigWOgVwRd7Ak2eVh/nz9a75mc2HVQbViX4utvc8TiVGH5F45nyERYKOIIkW9rbzunatyzq7pgYjFljRixS4FSHa117FduOnQrwB4Wg69DXMHjzVnlmIXuyVCbqKlwc5QiZSUNK3vRZoARqt9OIUrdM8iMjxd8NQFWmupCsZLpOc7gBoQXbk9HzJ6P4qL/iiYRqwAYqO4BtM7WohUO6UGrJ3YcTRJGDWsN5MC71muIm6534gxAsLg25d+3890wOFbIYXBvncpdbfca8WJtqZPiccRYnwSMVYxCBAQD44JmN/ApHs4mPrYsv1y7lTFEVWpvVDo6r9fWl3w0XZCQQ8VzMi7nMPNfpyaKniYQYiZz2l7xy+o8Zp12A2/0OOwAjFYnXVUwHpxAIy0SUn42YJF21tth75eb+GD3fWR2DA4+EKszHIBTAH1KmNPOrLBvKe+0Q6vkG3fhVEuh3hO6Qa/eAaC5f0=
