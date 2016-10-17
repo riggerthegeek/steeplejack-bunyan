@@ -11,7 +11,7 @@
 
 
 /* Third-party modules */
-import {createLogger as bunyan} from "bunyan";
+import {createLogger as bunyan, LoggerOptions} from "bunyan";
 import {ILoggerStrategy} from "steeplejack/interfaces/loggerStrategy";
 
 
@@ -24,7 +24,7 @@ export class Bunyan implements ILoggerStrategy {
     private _logger: any;
 
 
-    public constructor (options: { name: string }) {
+    public constructor (options: LoggerOptions) {
 
         this._logger = bunyan(options);
 
